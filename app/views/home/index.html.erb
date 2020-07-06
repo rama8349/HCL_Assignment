@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Questions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Question</th>
+      <th >Teaming Stages</th>
+      <th>Appears (Day)</th>
+      <th >Frequency</th>
+      <th >Type</th>
+      <th >Role</th>
+      <th >Required?</th>
+      <th >Conditions</th>
+      <th >Mapping</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @ques.each do |q| %>
+      <tr>
+        <td><%= q.description %></td>
+         <td><%= q.teaming_stages %></td>
+          <td><%= q.appears %></td>
+         <td><%= q.frequency %></td>
+          <td><%= q.q_type %></td>
+         <td><%= Role.find(q.role_id).name %></td>
+       <td><%= q.required %></td>
+       <td><%= q.conditions %></td>
+       <td><%= q.Mappingapping %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%#= link_to 'New Chat', new_qquestion_path %>
